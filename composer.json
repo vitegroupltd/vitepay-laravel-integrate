@@ -1,0 +1,39 @@
+{
+    "name": "vitegroupltd/vitepay-laravel-integrate",
+    "description": "Laravel package for vitepay.dev",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.4",
+    "autoload": {
+        "psr-4": {
+            "ViteGroup\\VitePay\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vite., Ltd",
+            "email": "admin@vitepay.dev",
+            "homepage": "https://github.com/vitegroupltd"
+        }
+    ],
+    "homepage": "https://github.com/vitegroupltd/vitepay-laravel-integrate",
+    "keywords": ["Laravel", "package", "payment", "vitepay", "9pay"],
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "require-dev": {
+        "illuminate/support": "^8.0",
+        "illuminate/http": "^8.83",
+        "illuminate/routing": "^8.83"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ViteGroup\\VitePay\\VitePayServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
