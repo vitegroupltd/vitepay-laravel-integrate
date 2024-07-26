@@ -46,6 +46,54 @@ If publishing files fails, please create corresponding files at the path `config
 
 After publishing the package assets a configuration file will be located at <code>config/vitepay.php</code>. Please find in vitepay.dev to get those values to fill into the config file.
 
+#### Step 5. Add middleware protection:
+
+###### app/Http/Kernel.php
+
+```php
+<?php
+
+namespace App\Http;
+
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
+
+class Kernel extends HttpKernel
+{
+    // Other kernel properties...
+    
+    /**
+     * The application's route middleware groups.
+     *
+     * @var array
+     */
+    protected $routeMiddleware = [
+        // Other middlewares...
+         'vitepay' => 'App\Http\Middleware\VitePayMiddleware',
+    ];
+}
+```
+
+#### Step 6. Add route:
+
+###### routes/api.php
+
+```php
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VitePayController;
+
+// Other routes properties...
+
+Route::group(['middleware' => ['vitepay']], function () {
+    Route::post('/vitepay/webhook', [VitePayController::class, 'webhook']);
+});
+
+}
+```
+
+Then your IPN (Webhook) URL will be something like https://yourdomain.ltd/api/vitepay/webhook, and you should provide it to VitePay's account setting. You could provide it to `routes/web.php` if you want but remember that VitePay will check for referer matched with the pre-registration URL. So make sure that you provide them the right URL of website.
+
 <!--- ## Usage --->
 
 ## Testing
