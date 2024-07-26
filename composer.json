@@ -3,7 +3,7 @@
     "description": "Laravel package for vitepay.dev",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.4",
+    "version": "1.0.0",
     "autoload": {
         "psr-4": {
             "ViteGroup\\VitePay\\": "src/"
@@ -17,7 +17,7 @@
         }
     ],
     "homepage": "https://github.com/vitegroupltd/vitepay-laravel-integrate",
-    "keywords": ["Laravel", "package", "payment", "vitepay", "9pay"],
+    "keywords": ["Laravel", "package", "payment", "vitepay", "9pay", "sepay"],
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.8"
