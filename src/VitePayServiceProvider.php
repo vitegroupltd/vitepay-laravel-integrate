@@ -4,7 +4,6 @@ namespace ViteGroup\VitePay;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
-use function ViteGroup\VitePay\config_path;
 
 class VitePayServiceProvider extends ServiceProvider
 {
