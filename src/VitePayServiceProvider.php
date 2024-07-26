@@ -16,6 +16,8 @@ class VitePayServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/vitepay.php' => config_path('vitepay.php'),
+            __DIR__.'/../app/Http/Controllers/VitePayController.php' => app_path('Http/Controllers/VitePayController.php'),
+            __DIR__.'/../app/Http/Middleware/VitePayMiddleware.php' => app_path('Http/Middleware/VitePayMiddleware.php'),
         ], 'vitepay');
 
         try {
