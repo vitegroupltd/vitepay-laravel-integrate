@@ -38,11 +38,10 @@ class VitePayTransactions
     /**
      * @throws GuzzleException
      */
-    public function update(string $code, string $number='', int $amount=0, string $description='', int $status=0, null|int $history_id=null): array
+    public function update(string $code, int $amount=0, string $description='', int $status=0, null|int $history_id=null): array
     {
         $param = [
             'code' => $code,
-            'number' => $number,
             'amount' => $amount,
             'description' => $description,
             'status' => $status
